@@ -1,0 +1,72 @@
+
+<ion-header>
+  <ion-navbar primary>
+    <button menuToggle>
+      <ion-icon name='menu'></ion-icon>
+    </button>
+    <ion-title>JustBooks</ion-title>
+	  <ion-buttons end>
+	    <button (click)="search()">
+	      <ion-icon name='search'></ion-icon>
+	    </button>
+	    <button (click)="presentPopover($event)">
+	      <ion-icon name='notifications'></ion-icon><span class="badge badge-assertive icon-badge badge-danger">3</span>
+	    </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-menu [content]="content">
+
+  <ion-toolbar primary>
+  <ion-title>
+	  <div>
+	  	<ion-buttons end>
+	    	<button (click)="openPage(HomePage)" class="m-t-20">
+	      		<ion-icon name="settings"></ion-icon>
+	      	</button>
+	    </ion-buttons>
+	  </div>
+    <div class="m-b-20 center">
+	  	<ion-grid>
+	  		<ion-row>
+	  			<ion-col width-25>
+      			<ion-icon name="contact" item-left class="icon-larger m-t-0"></ion-icon>
+	  			</ion-col>
+	  			<ion-col width-75>
+	    			<h6 class="m-0">Achal B.I</h6>
+				    <h6 class="font-small m-0">M1017650 (primary)</h6>
+				    <h6 class="font-small m-0">Basic reader (2 books)</h6>
+	  			</ion-col>
+	  		</ion-row>
+	  	</ion-grid>
+  	</div>
+  </ion-title>
+  </ion-toolbar>
+
+  <ion-content scroll="false">
+    <ion-list scroll="false">
+      <button ion-item *ngFor="let p of pages" (click)="openPage(p)" class="font-grey">
+      	<ion-icon name="{{p.icon}}" item-left></ion-icon>
+        {{p.title}}
+      </button>
+    </ion-list>
+  </ion-content>
+
+  <ion-footer>
+  <ion-footer>
+    <ion-title>
+    	<div class="center p-lr-20 p-tb-20"><img src="img/logo.jpg"></div>
+    </ion-title>
+  </ion-footer>
+</ion-footer>
+
+</ion-menu>
+
+<ion-nav [root]="rootPage" #content swipe-back-enabled="false"></ion-nav>
+
+
+<ion-tabs>
+  <ion-tab [root]="tab1Root" tabTitle="Home" tabIcon="home"></ion-tab>
+  <ion-tab [root]="tab2Root" tabTitle="Wishlist" tabIcon="cart" tabBadge="2" tabBadgeStyle="danger" ></ion-tab>
+</ion-tabs>

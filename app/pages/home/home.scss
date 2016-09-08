@@ -1,0 +1,80 @@
+.home {
+
+top: 55px; 
+
+.slide-zoom{
+	color: white;
+}
+
+.swiper-pagination-bullet{
+	background: white;
+}
+
+.color-white{
+	color: white;
+}
+
+.color-grey{
+	color: gray;
+}
+
+ion-card.adv-map p {
+  font-size: 0.7em !important;
+}
+
+button[fab].fab-points {
+  top: calc(100% - 46%)!important;
+  z-index: 50;
+  width: 55px;
+  height: 55px;
+  background: red;
+  right: 10px!important;
+  h1 span{
+  color: white;
+  font-weight: bold;
+  }
+  h1 p {
+  font-weight: bold;
+	line-height: 90%;
+  color: white;
+  font-size: 10px;
+  }
+
+  h1 {
+    font-size: 2.0rem!important;
+	}
+
+}
+
+.m-t-0{
+	margin-top: 0px;
+}
+
+.item-bold {
+  font-weight: bold;
+}
+
+ion-content.cards-bg {
+  background-color: #f4f4f7;
+}
+
+ ion-card{
+ 	position: relative;
+ 	width: 42%;
+ 	display: inline-block;
+ 	margin: 1px;
+ }
+
+.ml-16{
+ 	margin-left: 16px;
+ }
+
+
+ 	ion-scroll{
+    height: 260px;
+    white-space: nowrap;
+
+ 	}
+
+}
+

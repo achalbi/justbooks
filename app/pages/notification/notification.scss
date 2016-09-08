@@ -1,0 +1,57 @@
+.notification {
+
+}
+
+
+.popover-page {
+
+  ion-row,
+  ion-col {
+    padding: 0;
+  }
+
+  .text-button {
+    padding-left: 0;
+    text-align: center;
+    min-height: 20px;
+    line-height: 18px;
+  }
+
+  .text-button .item-inner {
+    padding-right: 0;
+  }
+
+  .text-smaller {
+    font-size: 12px;
+  }
+
+  .text-larger {
+    font-size: 16px;
+  }
+
+  .word-wrap{
+  	word-wrap: break-word;
+  	white-space: normal;
+  }
+}
+
+.icon-badge {
+  position: absolute;
+  top: -10%;
+  right: -10%;
+  padding: 1px 6px;
+  height: auto;
+  font-size: 12px;
+  line-height: 16px;
+  border-radius: 4px;
+  display: inline-block;
+  //padding: 3px 8px;
+  min-width: 10px;
+  //font-size: 1.3rem;
+  font-weight: bold;
+  //line-height: 1;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: baseline;  
+}
+

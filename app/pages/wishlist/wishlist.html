@@ -1,0 +1,51 @@
+ <!--
+  Generated template for the WishlistPage page.
+
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>wishlist</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding class="wishlist">
+
+<ion-list>
+  <ion-item *ngFor="let book of books.books_dump" >
+    <ion-thumbnail item-left>
+      <img src="{{book.img_url}}">
+    </ion-thumbnail>
+    <h2>{{book.title}}</h2>
+    <p>{{book.author}} • {{book.rating}}/5</p>
+    <!-- <button clear item-right>View</button> -->
+  </ion-item>
+</ion-list>
+
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar danger>
+    <ion-buttons>
+    <ion-row>
+    	<ion-col width-10>
+      <button fab>
+	        <ion-icon name="cart"></ion-icon>
+      </button>
+      </ion-col>
+      <ion-col width-90>
+      <button royal class="order-button">
+      <div class="order" center>
+	  	<span>Order</span>
+	    <p>(Any two books from the list)</p>
+      </div>
+      </button>
+      </ion-col>
+      </ion-row>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-footer>
