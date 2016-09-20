@@ -6,7 +6,7 @@
 -->
 <ion-header>
 
-  <ion-navbar>
+  <ion-navbar primary>
     <ion-title>wishlist</ion-title>
   </ion-navbar>
 
@@ -16,13 +16,19 @@
 <ion-content padding class="wishlist">
 
 <ion-list>
-  <ion-item *ngFor="let book of books.books_dump" >
+  <ion-item *ngFor="let book of books.books_dump" (click)="showBook()" >
     <ion-thumbnail item-left>
       <img src="{{book.img_url}}">
     </ion-thumbnail>
     <h2>{{book.title}}</h2>
     <p>{{book.author}} • {{book.rating}}/5</p>
     <!-- <button clear item-right>View</button> -->
+    <span>
+        <button clear small danger item-left class="m-0 p-0">
+          <ion-icon name='heart' is-active="false"></ion-icon>
+          Wishlist
+        </button>
+    </span>
   </ion-item>
 </ion-list>
 

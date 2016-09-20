@@ -11,7 +11,7 @@ import { NavController } from 'ionic-angular';
   templateUrl: 'build/pages/readerboard/readerboard.html',
 })
 export class ReaderboardPage {
-
+	location: string = "bangalore";
   constructor(private navCtrl: NavController) {
 
   }

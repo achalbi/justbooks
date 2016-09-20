@@ -15,4 +15,50 @@
 
 <ion-content padding>
 
+<ion-list>
+  <ion-item>
+      <ion-label><p>Number of Books</p></ion-label>
+      <ion-badge item-right>{{no_of_books}}</ion-badge>
+  </ion-item>
+
+  <ion-item>
+    <ion-range min="1" max="100" [(ngModel)]="no_of_books" primary  pin="true">
+      <ion-label range-left>1</ion-label>
+      <ion-label range-right>100</ion-label>
+    </ion-range>
+  </ion-item>
+
+  <ion-item>
+      <ion-label><p>Number of Months</p></ion-label>
+      <ion-badge item-right>{{no_of_months}}</ion-badge>
+  </ion-item>
+
+ <ion-item>
+   <ion-range min="1" max="12" step="1" [(ngModel)]="no_of_months" primary  pin="true">
+     <ion-label range-left>1</ion-label>
+     <ion-label range-right>12</ion-label>
+   </ion-range>
+ </ion-item>
+</ion-list>
+
+
 </ion-content>
+
+<ion-footer>
+  <ion-toolbar danger>
+    <ion-buttons>
+    <ion-row>
+    	<ion-col width-10>
+
+      </ion-col>
+      <ion-col width-90>
+      <button royal class="order-button">
+      <div class="order" center>
+	  	<span>Set Goal</span>
+      </div>
+      </button>
+      </ion-col>
+      </ion-row>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-footer>

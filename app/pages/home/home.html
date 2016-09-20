@@ -11,15 +11,17 @@
   <ion-slide style="background-color: #f53d3d;" >
     <h2>Your Goal status</h2>
   </ion-slide>
-
   </ion-slides>
   </div>
+  
+  <h6 class="color-grey ml-16">New Arrivals
+    <button clear primary item-right class="m-0 pull-right p-b-15" (click)="showCollection()" >More...</button>
+  </h6>
 
-  <h6 class="color-grey ml-16">New Arrivals</h6>
-   <ion-scroll scrollX="true">
-  <ion-card>
+  <ion-scroll scrollX="true">
+  <ion-card  (click)="showBook()">
 
-  <img src="http://cdn2.justbooksclc.com/medium/9788189988548.jpg" height="190px;">
+  <img src="http://cdn2.justbooksclc.com/medium/9788189988548.jpg" height="200px;">
   <button fab fab-right fab-top class="fab-points">
     <h1>
     <span>50</span>
@@ -28,14 +30,22 @@
     </h1>
   </button>
 
-  <ion-item >
+  <ion-item>
     <h2 class="item-bold">I Dare </h2>
     <p>Bedi, Kiran</p>
+    <span>
+        <button clear small light2 item-left class="m-0 p-0">
+          <ion-icon name='heart' is-active="false"></ion-icon>
+          Wishlist
+        </button>
+    </span>
   </ion-item>
+
+
   </ion-card>
   
-  <ion-card>
-  <img src="http://cdn2.justbooksclc.com/medium/9781846042508.jpg" height="190px;">
+  <ion-card  (click)="showBook()">
+  <img src="http://cdn2.justbooksclc.com/medium/9781846042508.jpg" height="200px;">
   <button fab fab-right fab-top class="fab-points">
     <h1>
     <span>30</span>
@@ -47,11 +57,17 @@
   <ion-item >
     <h2 class="item-bold">THE LADY AND THE PEACOCK: THE LIFE OF AUNG SAN SUU KYI OF BURMA</h2>
     <p>Peter Popham</p>
+        <span>
+        <button clear small danger item-left class="m-0 p-0">
+          <ion-icon name='heart' is-active="false"></ion-icon>
+          Wishlist
+        </button>
+    </span>
   </ion-item>
   </ion-card>
   
-  <ion-card>
-   <img src="http://cdn2.justbooksclc.com/medium/9780141005959.jpg" height="190px;">
+  <ion-card  (click)="showBook()">
+   <img src="http://cdn2.justbooksclc.com/medium/9780141005959.jpg" height="200px;">
   <button fab fab-right fab-top class="fab-points">
     <h1>
     <span>20</span>
@@ -63,17 +79,25 @@
   <ion-item >
     <h2 class="item-bold">LADIES COUPE</h2>
     <p>Nair, Anita</p>
+        <span>
+        <button clear small light2 item-left class="m-0 p-0">
+          <ion-icon name='heart' is-active="false"></ion-icon>
+          Wishlist
+        </button>
+    </span>
   </ion-item>
 
 </ion-card>
 </ion-scroll>
 
 
-  <h6 class="color-grey ml-16">Your Next Read </h6>
+  <h6 class="color-grey ml-16">Your Next Read
+    <button clear primary item-right class="m-0 pull-right p-b-15">More...</button>
+  </h6>
    <ion-scroll scrollX="true">
-  <ion-card>
+  <ion-card  (click)="showBook()">
 
-  <img src="http://cdn2.justbooksclc.com/medium/9780751565355.jpg" height="190px;">
+  <img src="http://cdn2.justbooksclc.com/medium/9780751565355.jpg" height="200px;">
   <button fab fab-right fab-top class="fab-points">
     <h1>
     <span>50</span>
@@ -85,11 +109,17 @@
   <ion-item >
     <h2 class="item-bold">HARRY POTTER AND THE CURSED CHILD - PARTS I & II</h2>
     <p>JK Rowling, John Tiffany and Jack Thorne</p>
+        <span>
+        <button clear small light2 item-left class="m-0 p-0">
+          <ion-icon name='heart' is-active="false"></ion-icon>
+          Wishlist
+        </button>
+    </span>
   </ion-item>
   </ion-card>
   
-  <ion-card>
-  <img src="http://cdn2.justbooksclc.com/medium/9780670089130.jpg" height="190px;">
+  <ion-card  (click)="showBook()">
+  <img src="http://cdn2.justbooksclc.com/medium/9780670089130.jpg" height="200px;">
   <button fab fab-right fab-top class="fab-points">
     <h1>
     <span>30</span>
@@ -101,11 +131,17 @@
   <ion-item >
     <h2 class="item-bold">THE GREAT DERANGEMENT: CLIMATE CHANGE AND THE UNTHINKABLE</h2>
     <p>Amitav Ghosh</p>
+        <span>
+        <button clear small light2 item-left class="m-0 p-0">
+          <ion-icon name='heart' is-active="false"></ion-icon>
+          Wishlist
+        </button>
+    </span>
   </ion-item>
   </ion-card>
   
-  <ion-card>
-   <img src="http://cdn2.justbooksclc.com/medium/9789385724220.jpg" height="190px;">
+  <ion-card  (click)="showBook()">
+   <img src="http://cdn2.justbooksclc.com/medium/9789385724220.jpg" height="200px;">
   <button fab fab-right fab-top class="fab-points">
     <h1>
     <span>20</span>
@@ -117,12 +153,18 @@
   <ion-item >
     <h2 class="item-bold">THE SECRET OF THE DRUIDS</h2>
     <p>Christopher C Doyle</p>
+        <span>
+        <button clear small light2 item-left class="m-0 p-0">
+          <ion-icon name='heart' is-active="false"></ion-icon>
+          Wishlist
+        </button>
+    </span>
   </ion-item>
 
 </ion-card>
-<ion-card>
+<ion-card  (click)="showBook()">
 
-  <img src="http://cdn2.justbooksclc.com/medium/9780751565355.jpg" height="190px;">
+  <img src="http://cdn2.justbooksclc.com/medium/9780751565355.jpg" height="200px;">
   <button fab fab-right fab-top class="fab-points">
     <h1>
     <span>50</span>
@@ -134,11 +176,17 @@
   <ion-item >
     <h2 class="item-bold">HARRY POTTER AND THE CURSED CHILD - PARTS I & II</h2>
     <p>JK Rowling,John Tiffany and Jack Thorne</p>
+        <span>
+        <button clear small light2 item-left class="m-0 p-0">
+          <ion-icon name='heart' is-active="false"></ion-icon>
+          Wishlist
+        </button>
+    </span>
   </ion-item>
   </ion-card>
   
-  <ion-card>
-  <img src="http://cdn2.justbooksclc.com/medium/9780670089130.jpg" height="190px;">
+  <ion-card  (click)="showBook()">
+  <img src="http://cdn2.justbooksclc.com/medium/9780670089130.jpg" height="200px;">
   <button fab fab-right fab-top class="fab-points">
     <h1>
     <span>30</span>
@@ -150,11 +198,17 @@
   <ion-item >
     <h2 class="item-bold">THE GREAT DERANGEMENT: CLIMATE CHANGE AND THE UNTHINKABLE</h2>
     <p>Amitav Ghosh</p>
+        <span>
+        <button clear small light2 item-left class="m-0 p-0">
+          <ion-icon name='heart' is-active="false"></ion-icon>
+          Wishlist
+        </button>
+    </span>
   </ion-item>
   </ion-card>
   
-  <ion-card>
-   <img src="http://cdn2.justbooksclc.com/medium/9789385724220.jpg" height="190px;">
+  <ion-card  (click)="showBook()">
+   <img src="http://cdn2.justbooksclc.com/medium/9789385724220.jpg" height="200px;">
   <button fab fab-right fab-top class="fab-points">
     <h1>
     <span>20</span>
@@ -166,6 +220,12 @@
   <ion-item >
     <h2 class="item-bold">THE SECRET OF THE DRUIDS</h2>
     <p>Christopher C Doyle</p>
+        <span>
+        <button clear small light2 item-left class="m-0 p-0">
+          <ion-icon name='heart' is-active="false"></ion-icon>
+          Wishlist
+        </button>
+    </span>
   </ion-item>
 
 </ion-card>

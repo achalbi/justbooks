@@ -1,0 +1,23 @@
+<ion-header>
+  <ion-navbar>
+    <button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Workflows</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="cards-bg">
+    <button ion-item *ngFor="let item of items" (click)="itemTapped($event, item)">
+  <ion-card>
+     <ion-card-content>
+      <h2 class="card-title">
+        {{item.title}}
+      </h2>
+      <p>
+        {{item.note}}
+      </p>
+    </ion-card-content>
+  </ion-card>
+    </button>
+</ion-content>

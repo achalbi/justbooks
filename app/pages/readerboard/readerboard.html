@@ -13,6 +13,67 @@
 </ion-header>
 
 
-<ion-content padding>
+<ion-content padding class="readerboard-page">
+  <ion-item class="b0">
+		<ion-label>Know your position in</ion-label>
+		<ion-select [(ngModel)]="location">
+	      <ion-option value="jpnagar" checked="true">J P Nagar</ion-option>
+	      <ion-option value="bangalore">Bangalore</ion-option>
+	    </ion-select>
+  </ion-item>
+<ion-list>
+  <ion-item>
+    <ion-avatar item-left>
+      <h1 primary class="bold">12</h1>
+      <p> rank</p>
+    </ion-avatar>
+
+    <ion-avatar item-left>
+    	<ion-icon name="contact" item-left class="icon-larger m-t-0" primary></ion-icon>
+    </ion-avatar>
+    <h2 primary class="bold">You</h2>
+    <p>J P Nagar</p>
+    <span class="points"> 50 points </span>
+  </ion-item>
+    <ion-item>
+    <ion-avatar item-left>
+      <h1 danger class="bold">1</h1>
+      <p>rank</p>
+    </ion-avatar>
+    <ion-avatar item-left>
+      <!-- <img src="img/avatar-finn.png"><img src="img/avatar-finn.png"> -->
+    <ion-icon name="contact" item-left class="icon-larger m-t-0" light2></ion-icon>
+    </ion-avatar>
+    <h2>Kumar</h2>
+    <p>Jayanagar</p>
+    <span class="points"> 220 points </span>
+  </ion-item>
+      <ion-item>
+    <ion-avatar item-left>
+      <h1 danger class="bold">2</h1>
+      <p>rank</p>
+    </ion-avatar>
+    <ion-avatar item-left>
+      <!-- <img src="img/avatar-finn.png"><img src="img/avatar-finn.png"> -->
+    <ion-icon name="contact" item-left class="icon-larger m-t-0" light2></ion-icon>
+    </ion-avatar>
+    <h2>Kumari</h2>
+    <p>Kormangala</p>
+    <span class="points"> 150 points </span>
+  </ion-item>
+      <ion-item>
+    <ion-avatar item-left>
+      <h1 danger class="bold">3</h1>
+      <p>rank</p>
+    </ion-avatar>
+    <ion-avatar item-left>
+      <!-- <img src="img/avatar-finn.png"><img src="img/avatar-finn.png"> -->
+    <ion-icon name="contact" item-left class="icon-larger m-t-0" light2></ion-icon>
+    </ion-avatar>
+    <h2>Kumara</h2>
+    <p>Rajajinagar</p>
+    <span class="points"> 120 points </span>
+  </ion-item>
+</ion-list>
 
 </ion-content>

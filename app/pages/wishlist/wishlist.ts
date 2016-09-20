@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { Book } from '../datatypes/Book';
 import { Books } from '../datatypes/Books';
+import {BookDetailsPage} from '../book-details/book-details';
 
 
 /*
@@ -18,6 +19,10 @@ export class WishlistPage {
 
   constructor(private navCtrl: NavController) {
   	this.books = new Books(); 
+  }
+
+  showBook(){
+    this.navCtrl.push(BookDetailsPage);
   }
 
 }

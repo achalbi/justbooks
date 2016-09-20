@@ -1,6 +1,8 @@
 import {Component} from '@angular/core';
 import {NavController} from 'ionic-angular';
 import {Slides} from 'ionic-angular';
+import {BookDetailsPage} from '../book-details/book-details';
+import {BookListPage} from '../book-list/book-list';
 
 
 @Component({
@@ -16,6 +18,15 @@ export class HomePage {
 		loop: false
   };
   constructor(private navCtrl: NavController) {
+  }
+
+
+  showBook(){
+    this.navCtrl.push(BookDetailsPage);
+  }
+
+  showCollection(){
+    this.navCtrl.push(BookListPage);
   }
 
 }

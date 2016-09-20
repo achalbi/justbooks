@@ -1,3 +1,45 @@
-.readerboard {
+.readerboard-page {
+
+.bold{
+	font-weight: bold;
+}
+.b0{
+	border: 0px;
+}
+
+button[fab].fab-points {
+  width: 55px;
+  height: 55px;
+  background: #f53d3d;
+  right: 10px!important;
+  h1 span{
+  color: white;
+  font-weight: bold;
+  }
+  h1 p {
+  font-weight: bold;
+	line-height: 90%;
+  color: white;
+  font-size: 10px;
+  }
+
+  h1 {
+    font-size: 2.0rem!important;
+	}
+
+}
+
+.item p{
+	margin: 0;
+}
+
+.points{
+	color: #f53d3d;
+	font-size: 12px;
+}
+
+ion-avatar{
+	margin: 8px 8px 8px 0px!important;
+}
 
 }

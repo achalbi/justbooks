@@ -4,6 +4,8 @@ import { AlertController } from 'ionic-angular';
 import {FilterPage} from '../search/filter';
 import { PopoverController } from 'ionic-angular';
 import { ModalController } from 'ionic-angular';
+import { Books } from '../datatypes/Books';
+import { Book } from '../datatypes/Book';
 
 
 /*
@@ -18,7 +20,8 @@ import { ModalController } from 'ionic-angular';
 export class SearchPage {
 
 	searchQuery: string = '';
-  items: string[];
+  books: Books;
+  books_dump: Array<Book>;
 
   constructor(private navCtrl: NavController, public alertCtrl: AlertController, private popoverCtrl: PopoverController, public modalCtrl: ModalController) {
 
@@ -26,12 +29,8 @@ export class SearchPage {
   }
 
   initializeItems() {
-  	this.items = [
-  		'The Book Theif',
-  		'Da vinci code',
-  		'The sales room'
-
-  	];
+  	this.books = new Books();
+  	this.books_dump = this.books.books_dump;
   }
 
     getItems(ev: any) {
@@ -43,13 +42,15 @@ export class SearchPage {
 
     // if the value is an empty string don't filter the items
     if (val && val.trim() != '') {
-      this.items = this.items.filter((item) => {
-        return (item.toLowerCase().indexOf(val.toLowerCase()) > -1);
+      this.books_dump = this.books.books_dump.filter((book) => {
+        return (book.title.toLowerCase().indexOf(val.toLowerCase()) > -1);
       })
     }
   }
 
-  filter(myEvent){
+
+
+  filter_search(myEvent){
     let modal = this.modalCtrl.create(FilterPage);
     modal.present();
 

@@ -14,9 +14,10 @@ export class Books {
     this.authors = ['Bedi, Kiran','Peter Popham','Nair, Anita','JK Rowling, John Tiffany and Jack Thorne', 'Amitav Ghosh'];
     this.ratings = ['3','4','4.5','3.5', '2'];
     this.books_dump = [];
-    for(let i = 1; i < 11; i++) {
-      var index = Math.floor(Math.random() * this.images.length);
-      this.book = new Book('', this.titles[index] , this.ratings[index] , this.images[index] , this.authors[index] );
+    for(let i = 0; i < 5; i++) {
+      //var index = Math.floor(Math.random() * this.images.length);
+      var index = i;
+      this.book = new Book('', this.titles[index] , this.ratings[index] , this.images[index] , this.authors[index] ,"");
       this.books_dump.push(this.book);
     }
   }

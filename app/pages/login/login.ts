@@ -30,7 +30,7 @@ export class LoginPage {
   }
 
   login(event){
-  	this.presentLoading();
+  //	this.presentLoading();
   	this.navCtrl.setRoot(TabsPage);
   }
 

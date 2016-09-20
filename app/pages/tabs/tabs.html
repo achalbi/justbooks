@@ -22,25 +22,25 @@
   <ion-title>
 	  <div>
 	  	<ion-buttons end>
-	    	<button (click)="openPage(HomePage)" class="m-t-20">
-	      		<ion-icon name="settings"></ion-icon>
-	      	</button>
-	    </ion-buttons>
-	  </div>
-    <div class="m-b-20 center">
-	  	<ion-grid>
-	  		<ion-row>
-	  			<ion-col width-25>
-      			<ion-icon name="contact" item-left class="icon-larger m-t-0"></ion-icon>
-	  			</ion-col>
-	  			<ion-col width-75>
-	    			<h6 class="m-0">Achal B.I</h6>
-				    <h6 class="font-small m-0">M1017650 (primary)</h6>
-				    <h6 class="font-small m-0">Basic reader (2 books)</h6>
-	  			</ion-col>
-	  		</ion-row>
-	  	</ion-grid>
-  	</div>
+        <button (click)="openPage(HomePage)" class="m-t-20">
+            <ion-icon name="settings"></ion-icon>
+          </button>
+      </ion-buttons>
+    </div>
+    <div class="m-b-20 center" (click)="openProfilePage()">
+      <ion-grid>
+        <ion-row>
+          <ion-col width-25>
+            <ion-icon name="contact" item-left class="icon-larger m-t-0"></ion-icon>
+          </ion-col>
+          <ion-col width-75>
+            <h6 class="m-0">Achal B.I</h6>
+            <h6 class="font-small m-0">M1017650 (primary)</h6>
+            <h6 class="font-small m-0">Basic reader (2 books)</h6>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </div>
   </ion-title>
   </ion-toolbar>
 
@@ -68,5 +68,7 @@
 
 <ion-tabs>
   <ion-tab [root]="tab1Root" tabTitle="Home" tabIcon="home"></ion-tab>
-  <ion-tab [root]="tab2Root" tabTitle="Wishlist" tabIcon="cart" tabBadge="2" tabBadgeStyle="danger" ></ion-tab>
+  <ion-tab [root]="tab2Root" tabTitle="Goal" tabIcon="trophy"></ion-tab>
+  <ion-tab [root]="tab3Root" tabTitle="Reader-Board" tabIcon="podium"></ion-tab>
+  <ion-tab [root]="tab4Root" tabTitle="Wishlist" tabIcon="cart" tabBadge="2" tabBadgeStyle="danger" ></ion-tab>
 </ion-tabs>

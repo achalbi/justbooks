@@ -27,7 +27,7 @@ button[fab].fab-points {
   z-index: 50;
   width: 55px;
   height: 55px;
-  background: red;
+  background: #f53d3d;
   right: 10px!important;
   h1 span{
   color: white;
@@ -69,12 +69,31 @@ ion-content.cards-bg {
  	margin-left: 16px;
  }
 
-
- 	ion-scroll{
-    height: 260px;
+  ion-scroll{
+    height: 300px;
     white-space: nowrap;
 
- 	}
+  }
 
 }
 
+
+.v-align-baseline{
+  vertical-align: baseline;
+}
+
+.pull-right{
+  float:right;
+}
+
+.p-b-15{
+  padding-bottom: 15px;
+}
+
+.m-0{
+  margin: 0px;
+}
+
+.p-0{
+  padding: 0px;
+}
