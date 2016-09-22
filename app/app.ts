@@ -3,6 +3,7 @@ import {Platform, ionicBootstrap} from 'ionic-angular';
 import {StatusBar} from 'ionic-native';
 import {LoginPage} from './pages/login/login';
 import {WishlistPage} from './pages/wishlist/wishlist';
+import { Splashscreen } from 'ionic-native';
 
 
 @Component({
@@ -19,6 +20,7 @@ export class MyApp {
       // Okay, so the platform is ready and our plugins are available.
       // Here you can do any higher level native things you might need.
       StatusBar.styleDefault();
+      Splashscreen.show();
     });
   }
 

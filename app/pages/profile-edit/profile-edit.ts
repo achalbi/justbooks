@@ -1,18 +1,16 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
-import {MsgPushPage} from '../msg-push/msg-push';
-import { ProfileEditPage} from '../profile-edit/profile-edit';
 
 /*
-  Generated class for the ProfilePage page.
+  Generated class for the ProfileEditPage page.
 
   See http://ionicframework.com/docs/v2/components/#navigation for more info on
   Ionic pages and navigation.
 */
 @Component({
-  templateUrl: 'build/pages/profile/profile.html',
+  templateUrl: 'build/pages/profile-edit/profile-edit.html',
 })
-export class ProfilePage {
+export class ProfileEditPage {
 	first_name: string = "Achal";
 	last_name: string = "Indiresh";
 	mobile: string = "8105991000";
@@ -23,14 +21,6 @@ export class ProfilePage {
 
   constructor(private navCtrl: NavController) {
 
-  }
-
-  openRenew(){
-  	this.navCtrl.push(MsgPushPage)
-  }
-
-  edit_profile(){
-  	this.navCtrl.push(ProfileEditPage)
   }
 
 }
