@@ -1,20 +1,33 @@
 //import {State} from './State';
 
 export class Book {
-  id: string;
+  id: number;
   //states: Array<State>;
   title: string;
-  description: string;
-  rating: string;
-  img_url: string;
+  summary: string;
+  image_url: string;
   author: string;
+  category: string;
+  isbn: string;
+  language: string;
+  no_of_pages: string;
+  avg_reading_times: number;
+  no_of_times_rented: number;
 
-  constructor( id: string, title: string, rating: string, img_url: string, author: string, description: string){
+  constructor( id?: number, title?: string, summary?: string,
+               image_url?: string, author?: string, category?: string,
+               isbn?: string, language?: string, no_of_pages?: string,
+               avg_reading_times?: number, no_of_times_rented?: number){
     this.id = id;
     this.title = title;
-    this.description = description;
-    this.rating = rating;
-    this.img_url = img_url;
+    this.summary = summary;
+    this.image_url = image_url;
     this.author = author;
+    this.category = category;
+    this.isbn = isbn;
+    this.language = language;
+    this.no_of_pages = no_of_pages;
+    this.avg_reading_times = avg_reading_times;
+    this.no_of_times_rented = no_of_times_rented;
   }
 }

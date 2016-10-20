@@ -16,12 +16,12 @@
 <ion-content padding class="booklist">
 
 <ion-list>
-  <ion-item *ngFor="let book of books.books_dump" (click)="showBook()" >
+  <a ion-item *ngFor="let book of books.books" (click)="showBook(book)" >
     <ion-thumbnail item-left>
-      <img src="{{book.img_url}}">
+      <img src="{{book.image_url}}">
     </ion-thumbnail>
     <h2>{{book.title}}</h2>
-    <p>{{book.author}} • {{book.rating}}/5</p>
+    <p>{{book.author}} • {{book.no_of_times_rented}} times rented</p>
     <!-- <button clear item-right>View</button> -->
     <span>
         <button clear small light2 item-left class="m-0 p-0">
@@ -29,6 +29,6 @@
           Wishlist
         </button>
     </span>
-  </ion-item>
+  </a>
 </ion-list>
 </ion-content>

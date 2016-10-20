@@ -16,7 +16,7 @@
   </ion-navbar>
 </ion-header>
 
-<ion-menu [content]="content">
+<ion-menu [content]="content" type="overlay" side="left">
 
   <ion-toolbar primary>
   <ion-title>
@@ -34,9 +34,9 @@
             <ion-icon name="contact" item-left class="icon-larger m-t-0"></ion-icon>
           </ion-col>
           <ion-col width-75>
-            <h6 class="m-0">Achal B.I</h6>
-            <h6 class="font-small m-0">M1017650 (primary)</h6>
-            <h6 class="font-small m-0">Basic reader (2 books)</h6>
+            <h6 class="m-0">{{ memberInfo.first_name }} {{ memberInfo.last_name }}</h6>
+            <h6 class="font-small m-0">{{memberInfo.membership_no }} </h6>
+            <h6 class="font-small m-0">{{memberInfo.plan_name}} </h6>
           </ion-col>
         </ion-row>
       </ion-grid>

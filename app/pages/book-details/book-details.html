@@ -6,7 +6,7 @@
 -->
 <ion-header>
 
-  <ion-navbar>
+  <ion-navbar primary>
     <ion-title>BookDetails</ion-title>
   </ion-navbar>
 
@@ -17,35 +17,35 @@
     <div *ngIf="book" class="selection">
         <ion-card>
             <ion-card-content>
-            	<img src="{{book.img_url}}"/>
+            	<img src="{{book.image_url}}"/>
                 <h3 class="card-title">
                     {{book.title}}
                 </h3>
                 <h4>
-                    {{book.description}}
+                    {{book.summary}}
                 </h4>
             </ion-card-content>
             <ion-list>
                 <ion-item>
                     <ion-icon item-left name="albums"></ion-icon>
                     <h3>Category</h3>
-                    <ion-note item-right>Comics</ion-note>
+                    <ion-note item-right>{{book.category}}</ion-note>
                 </ion-item>
                 <ion-item>
                     <ion-icon item-left name="clock"></ion-icon>
                     <h3>Times Rented</h3>
-                    <ion-note item-right light2>4533</ion-note>
+                    <ion-note item-right light2>{{book.no_of_times_rented}}</ion-note>
                 </ion-item>
                 <ion-item>
                     <ion-icon item-left name="book"></ion-icon>
                     <h3>Reading time</h3>
-                    <ion-note item-right light2>6 days</ion-note>
+                    <ion-note item-right light2>{{book.avg_reading_times}}</ion-note>
                 </ion-item>
                 <button ion-item (click)="showAuthor($event, book.author)">
                     <ion-avatar item-left>
-                        <img src="http://i.stack.imgur.com/iMel0.gif"/>
+                        <img src="{{book.image_url}}"/>
                     </ion-avatar>
-                    <h2>Achal B.I.</h2>
+                    <h2>{{book.author}}</h2>
                     <p>Best Author</p>
                 </button>
             </ion-list>

@@ -14,16 +14,21 @@
 <div class="center p-lr-20"><img src="img/logo.jpg"></div>
 	
 <ion-list id="loginList">
-
+  <form [formGroup]="loginForm" (ngSubmit)="login(loginForm.controls.mobile.value)">
   <ion-item>
     <ion-label floating>Enter Mobile Number</ion-label>
-    <ion-input type="text"></ion-input>
+    <ion-input type="tel" formControlName="mobile" ></ion-input>
   </ion-item>
+    <p [hidden]="loginForm.controls.mobile.valid || submitted == false" danger padding-left>
+        Mobile number is required
+      </p>
 
 
 	<div padding>
-	  <button class="pull-right" (click)="login($event)">Login</button>
+    <button ion-button type="submit" color="primary" class="pull-right" [disabled]="!loginForm.valid">Login</button>
 	</div>
+
+  </form>
 </ion-list>
 
 

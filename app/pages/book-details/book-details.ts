@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import { NavController, NavParams } from 'ionic-angular';
 import { Book } from "../datatypes/Book";
-import { Books } from '../datatypes/Books';
+import { Books } from '../datatypes/mock-books';
+import { MapUtils } from "../../lib/map-utils"
 
 
 /*
@@ -15,13 +16,12 @@ import { Books } from '../datatypes/Books';
 })
 export class BookDetailsPage {
 	book: Book;
-	books: Books;
 
-  constructor(private navCtrl: NavController) {
-  	this.books = new Books;
-  	var index = Math.floor(Math.random() * 4);
-  	this.book = this.books.books_dump[index];
-  	this.book.description = "This is an Awesome Book";
+
+  constructor(private navCtrl: NavController, private navParams: NavParams) {
+    
+  //  this.book = MapUtils.fromJsonToObj(this.book, navParams.get('book') );
+  	this.book = JSON.parse(navParams.get('book'));
   }
 
 }

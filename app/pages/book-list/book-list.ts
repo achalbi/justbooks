@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
-import { Books } from '../datatypes/Books';
+import { NavController,NavParams } from 'ionic-angular';
+import { Books } from '../datatypes/books';
+import { BookDetailsPage } from '../book-details/book-details';
 
 /*
   Generated class for the BookListPage page.
@@ -12,10 +13,14 @@ import { Books } from '../datatypes/Books';
   templateUrl: 'build/pages/book-list/book-list.html',
 })
 export class BookListPage {
-	books: Books;
+	books: Books = new Books();
 
-  constructor(private navCtrl: NavController) {
-  	this.books = new Books(); 
+  constructor(private navCtrl: NavController, private navParams: NavParams) {
+  	this.books.books = JSON.parse(navParams.get('books')); 
+  }
+
+  showBook(book){
+    this.navCtrl.push(BookDetailsPage, { book: JSON.stringify(book)});
   }
 
 }

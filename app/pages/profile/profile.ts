@@ -1,7 +1,8 @@
-import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import { Component, OnInit } from '@angular/core';
+import { NavController, LocalStorage, Storage } from 'ionic-angular';
 import {MsgPushPage} from '../msg-push/msg-push';
 import { ProfileEditPage} from '../profile-edit/profile-edit';
+import { User } from '../datatypes/user';
 
 /*
   Generated class for the ProfilePage page.
@@ -12,17 +13,16 @@ import { ProfileEditPage} from '../profile-edit/profile-edit';
 @Component({
   templateUrl: 'build/pages/profile/profile.html',
 })
-export class ProfilePage {
-	first_name: string = "Achal";
-	last_name: string = "Indiresh";
-	mobile: string = "8105991000";
-	email: string = "achal.rvce@gmail.com";
-	mem_no: string = "M1017650";
-	plan: string = "Basic Plan";
-	branch: string = "J.P Nagar";
+export class ProfilePage implements OnInit{
+  user: User = new User(); 
+  localStorage: Storage = new Storage(LocalStorage);
 
-  constructor(private navCtrl: NavController) {
+  constructor(private navCtrl: NavController) {}
 
+  ngOnInit(){
+    this.localStorage.get('current_user').then((user) => {
+      this.user = JSON.parse(user);
+    });
   }
 
   openRenew(){

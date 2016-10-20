@@ -13,11 +13,11 @@
 					<ion-searchbar (ionInput)="getItems($event)"></ion-searchbar>
 				</ion-col>
 	  		<ion-col width-10>
-			    <ion-buttons end>
+<!-- 			    <ion-buttons end>
 				    <button (click)="filter_search($event)">
 				    	<ion-icon name="funnel"></ion-icon>
 				    </button>
-				  </ion-buttons>
+				  </ion-buttons> -->
 				</ion-col>
 				</ion-row>  
     </ion-title>
@@ -29,14 +29,14 @@
 <ion-content padding>
 
 <ion-list>
-  <ion-item *ngFor="let book of books_dump" >
+  <a ion-item *ngFor="let book of books.books" (click)="showBook(book)">
     <ion-thumbnail item-left>
-      <img src="{{book.img_url}}">
+      <img src="{{book.image_url}}">
     </ion-thumbnail>
     <h2>{{book.title}}</h2>
-    <p>{{book.author}} • {{book.rating}}/5</p>
+    <p>{{book.author}} • {{book.no_of_times_rented }} times read by others</p>
     <!-- <button clear item-right>View</button> -->
-  </ion-item>
+  </a>
 </ion-list>
 
 </ion-content>
