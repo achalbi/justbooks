@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { Http } from '@angular/http';
 import 'rxjs/add/operator/map';
 import { Book } from '../../pages/datatypes/book';
-
+import { AppSettings } from '../app-settings';
 /*
   Generated class for the SearchService provider.
 
@@ -11,7 +11,7 @@ import { Book } from '../../pages/datatypes/book';
 */
 @Injectable()
 export class SearchService {
-	base_url: string = 'http://localhost:3000/api/v2/'; 
+	base_url: string = AppSettings.API_ENDPOINT; 
 
   constructor(private http: Http) {}
 

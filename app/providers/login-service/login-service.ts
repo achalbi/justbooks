@@ -3,6 +3,7 @@ import { Http } from '@angular/http';
 import 'rxjs/add/operator/map';
 import { MemberInfo } from '../../pages/datatypes/member-info';
 import { User } from '../../pages/datatypes/user';
+import { AppSettings } from '../app-settings';
 
 /*
   Generated class for the LoginService provider.
@@ -13,7 +14,7 @@ import { User } from '../../pages/datatypes/user';
 @Injectable()
 export class LoginService {
 
-	base_url: string = 'http://localhost:3000/api/v2/'; 
+	base_url: string = AppSettings.API_ENDPOINT; 
 	//base_url: string = 'http://mapi.justbooksclc.com/api/v2/'; 
 	data: string;
 
@@ -77,6 +78,33 @@ export class LoginService {
 	      });
 	  });
 	}
+
+
+
+	logout(membership_no, api_key): Promise<String> {
+			return new Promise(resolve => {
+	    this.http.get(this.base_url+"delete_sessions.json?membership_no="+membership_no+"&api_key="+api_key)
+	      .map(res => res.json())
+	      .subscribe(data => {
+	        this.data = data;
+	        resolve(this.data);
+	      });
+	  });
+	
+	}
+
+	push_register(membership_no, reg_id): Promise<String> {
+			return new Promise(resolve => {
+	    this.http.get(this.base_url+"push_notifications/create.json?membership_no="+membership_no+"&reg_id="+reg_id)
+	      .map(res => res.json())
+	      .subscribe(data => {
+	        this.data = data;
+	        resolve(this.data);
+	      });
+	  });
+	
+	}
+
 
 
 }

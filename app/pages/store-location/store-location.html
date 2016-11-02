@@ -1,0 +1,40 @@
+<!--
+  Generated template for the StoreLocationPage page.
+
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar primary>
+    <ion-title>Store Location</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+<ion-card *ngFor="let store of stores">
+  <ion-card-header primary>
+   <h1> {{store.name}}</h1>
+  </ion-card-header>
+  <ion-card-content>
+    {{store.address}}
+  </ion-card-content>
+    <ion-row>
+    <ion-col>
+      <button primary clear small (click)="callNo(store.phone)">
+        <ion-icon name="call"></ion-icon>
+        <div>{{store.phone}}</div>
+      </button>
+    </ion-col>
+    <ion-col center text-right>
+      <ion-note class="pr-10">
+	    <ion-icon name="pin"></ion-icon>
+        {{store.distance.toLocaleString()}} Kms
+      </ion-note>
+    </ion-col>
+  </ion-row>
+
+</ion-card>
+</ion-content>

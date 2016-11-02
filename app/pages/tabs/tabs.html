@@ -22,7 +22,7 @@
   <ion-title>
 	  <div>
 	  	<ion-buttons end>
-        <button (click)="openPage(HomePage)" class="m-t-20">
+        <button (click)="openProfilePage()" class="m-t-20">
             <ion-icon name="settings"></ion-icon>
           </button>
       </ion-buttons>
@@ -50,6 +50,10 @@
       	<ion-icon name="{{p.icon}}" item-left></ion-icon>
         {{p.title}}
       </button>
+      <button ion-item  (click)="logout()" class="font-grey">
+        <ion-icon name="log-out" item-left></ion-icon>
+        Logout
+      </button>
     </ion-list>
   </ion-content>
 
@@ -70,5 +74,5 @@
   <ion-tab [root]="tab1Root" tabTitle="Home" tabIcon="home"></ion-tab>
   <ion-tab [root]="tab2Root" tabTitle="Goal" tabIcon="trophy"></ion-tab>
   <ion-tab [root]="tab3Root" tabTitle="Reader-Board" tabIcon="podium"></ion-tab>
-  <ion-tab [root]="tab4Root" tabTitle="Wishlist" tabIcon="cart" tabBadge="2" tabBadgeStyle="danger" ></ion-tab>
+  <ion-tab [root]="tab4Root" tabTitle="Wishlist" tabIcon="cart" tabBadgeStyle="danger" ></ion-tab> <!-- tabBadge="2" --> 
 </ion-tabs>

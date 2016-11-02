@@ -8,16 +8,19 @@ import { PopoverController } from 'ionic-angular';
 import { NotificationPage } from '../notification/notification';
 import { WishlistPage } from '../wishlist/wishlist';
 import { GoalPage } from '../goal/goal';
+import { LoginPage } from '../login/login';
 import { ReaderboardPage } from '../readerboard/readerboard';
 import { ProfilePage } from '../profile/profile';
+import { StoreLocationPage } from '../store-location/store-location';
 import { OnInit } from '@angular/core';
 import { LoginService } from '../../providers/login-service/login-service';
+import { WishlistService } from '../../providers/wishlist-service/wishlist-service';
 import { MemberInfo } from '../datatypes/member-info';
 import { User } from '../datatypes/user';
 
 @Component({
   templateUrl: 'build/pages/tabs/tabs.html',
-  providers: [LoginService],
+  providers: [LoginService, WishlistService ],
 })
 export class TabsPage  implements OnInit {
 
@@ -32,7 +35,9 @@ export class TabsPage  implements OnInit {
   private memberInfo: MemberInfo = new MemberInfo();
   private user: User = new User();
 
-  constructor(private menu: MenuController, private nav: NavController, public popoverCtrl: PopoverController, public loginService: LoginService) {}
+  constructor( private menu: MenuController, private nav: NavController,
+               public popoverCtrl: PopoverController, public loginService: LoginService,
+               public wishlistService: WishlistService ) {}
 
 
     ngOnInit(): void {
@@ -48,8 +53,8 @@ export class TabsPage  implements OnInit {
           { icon: 'bookmark', title: 'Wishlist', component: WishlistPage },
           { icon: 'cart',title: 'Orders', component: HomePage },
           { icon: 'list',title: 'Reader-Board', component: GoalReaderboardPage },
+          {  icon: 'pin',title: 'Store Location', component: StoreLocationPage },
           { icon: 'help',title: 'Help', component: HomePage }
-          //{ title: 'Home', component: MsgPushPage },
          // { title: 'My Books List', component: ListPage }
         ];
 
@@ -87,12 +92,35 @@ export class TabsPage  implements OnInit {
     this.nav.push(page.component);
   }
 
+  logout() {
+    // close the menu when clicking a link from the menu
+    this.menu.close();
+    this.localStorage.get('current_user').then((user) => {
+      this.user = JSON.parse(user);
+      this.loginService.logout(this.user.membership_no, this.user.authentication_token).then(data => {
+        //return data;
+        // navigate to the new page if it is not the current page
+        this.nav.push(LoginPage);
+      });
+    }); 
+  }
+
   openProfilePage() {
     // close the menu when clicking a link from the menu
     this.menu.close();
     // navigate to the new page if it is not the current page
     this.nav.push(ProfilePage);
 
+  }
+
+
+  addToWishList(title_id){
+    this.localStorage.get('current_user').then((user) => {
+      this.user = JSON.parse(user);
+      this.wishlistService.add_to_wishlist(this.user.phone, this.user.membership_no, this.user.authentication_token, title_id).then(data => {
+        //return data;
+      });
+    }); 
   }
 
 

@@ -19,9 +19,9 @@
     </h6>
 
     <ion-scroll scrollX="true">
-      <ion-card  *ngFor="let book of top_rentals_books" (click)="showBook(book)">
+      <ion-card  *ngFor="let book of top_rentals_books" >
 
-        <img src="{{book.image_url}}" height="200px;">
+        <img src="{{book.image_url}}" height="200px;" (click)="showBook(book)">
         <button fab fab-right fab-top class="fab-points">
           <h1>
           <span>50</span>
@@ -31,12 +31,12 @@
         </button>
 
         <ion-item>
-          <h2 class="item-bold">{{book.title}}</h2>
-          <p>{{book.author}}</p>
+          <h2 class="item-bold" (click)="showBook(book)">{{book.title}}</h2>
+          <p (click)="showBook(book)">{{book.author}}</p>
           <span>
-              <button clear small light2 item-left class="m-0 p-0">
+              <button clear small light2 item-left class="m-0 p-0" (click)="addToWishList(book.id, book.title)">
                 <ion-icon name='heart' is-active="false"></ion-icon>
-                Wishlist
+                Add to Wishlist
               </button>
           </span>
         </ion-item>
@@ -50,9 +50,9 @@
       <button clear primary item-right class="m-0 pull-right p-b-15" (click)="showCollection(new_arrivals_books)" >More...</button>
     </h6>
     <ion-scroll scrollX="true">
-      <ion-card  *ngFor="let book of new_arrivals_books" (click)="showBook(book)">
+      <ion-card  *ngFor="let book of new_arrivals_books" >
 
-        <img src="{{book.image_url}}" height="200px;">
+        <img src="{{book.image_url}}" height="200px;" (click)="showBook(book)">
         <button fab fab-right fab-top class="fab-points">
           <h1>
           <span>50</span>
@@ -62,12 +62,14 @@
         </button>
 
         <ion-item>
-          <h2 class="item-bold">{{book.title}}</h2>
-          <p>{{book.author}}</p>
+          <span (click)="showBook(book)">
+            <h2 class="item-bold">{{book.title}}</h2>
+            <p>{{book.author}}</p>
+          </span>
           <span>
-              <button clear small light2 item-left class="m-0 p-0">
+              <button clear small light2 item-left class="m-0 p-0" (click)="addToWishList(book.id, book.title)">
                 <ion-icon name='heart' is-active="false"></ion-icon>
-                Wishlist
+                Add to Wishlist
               </button>
           </span>
         </ion-item>
@@ -82,9 +84,9 @@
       <button clear primary item-right class="m-0 pull-right p-b-15" (click)="showCollection(your_next_read_books)" >More...</button>
     </h6>
     <ion-scroll scrollX="true">
-      <ion-card  *ngFor="let book of your_next_read_books" (click)="showBook(book)">
+      <ion-card  *ngFor="let book of your_next_read_books">
 
-        <img src="{{book.image_url}}" height="200px;">
+        <img src="{{book.image_url}}" height="200px;"(click)="showBook(book)">
         <button fab fab-right fab-top class="fab-points">
           <h1>
           <span>50</span>
@@ -94,12 +96,12 @@
         </button>
 
         <ion-item>
-          <h2 class="item-bold">{{book.title}}</h2>
-          <p>{{book.author}}</p>
+          <h2 class="item-bold" (click)="showBook(book)">{{book.title}}</h2>
+          <p (click)="showBook(book)">{{book.author}}</p>
           <span>
-              <button clear small light2 item-left class="m-0 p-0">
+              <button clear small light2 item-left class="m-0 p-0" (click)="addToWishList(book.id, book.title)">
                 <ion-icon name='heart' is-active="false"></ion-icon>
-                Wishlist
+                Add to Wishlist
               </button>
           </span>
         </ion-item>

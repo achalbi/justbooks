@@ -12,27 +12,27 @@
 
 </ion-header>
 
-
 <ion-content padding class="wishlist">
 
 <ion-list>
-  <ion-item *ngFor="let book of books.books_dump" (click)="showBook()" >
+  <ion-item *ngFor="let book of books.books"  >
     <ion-thumbnail item-left>
-      <img src="{{book.img_url}}">
+      <img src="{{book.image_url}}"(click)="showBook(book)">
     </ion-thumbnail>
-    <h2>{{book.title}}</h2>
-    <p>{{book.author}} • {{book.rating}}/5</p>
+    <h2 (click)="showBook(book)" primary>{{book.title}}</h2>
+    <p>{{book.author}} • {{book.no_of_times_rented }} </p>
     <!-- <button clear item-right>View</button> -->
     <span>
-        <button clear small danger item-left class="m-0 p-0">
+        <button clear small danger item-left class="m-0 p-0" (click)="remove_from_wishlist(book.title_id, book.title)">
           <ion-icon name='heart' is-active="false"></ion-icon>
-          Wishlist
+          Remove from wishlist
         </button>
     </span>
   </ion-item>
 </ion-list>
 
 </ion-content>
+
 
 <ion-footer>
   <ion-toolbar danger>
